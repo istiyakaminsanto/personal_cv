@@ -20,7 +20,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
     $mail->SMTPAuth = true;
     $mail->Username = "moslemuddin6991@gmail.com";
     $mail->Password = "moslem420";
-    $mail->setFrom($email, $name);
+    //$mail->setFrom($email, $name);
     $mail->addAddress('istiyakaminsanto@gmail.com', 'Istiyak Amin');
     $mail->isHTML(true);                                  
     $mail->Subject = 'Got one new messege from your website';
