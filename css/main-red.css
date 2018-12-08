@@ -2072,3 +2072,23 @@ ul.social-links li:last-child a {
 .header-color-main .site-main-menu li.active a:after {
     background-color: #fff
 }
+
+/* Extra CSS  */
+#contact-msg{
+    border:2px solid #ff724c;
+    text-align: center;
+    display: none;
+}
+
+.loading { 
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .8) 
+    url('https://loading.io/spinners/balls/lg.circle-slack-loading-icon.gif')
+    50% 50%
+    no-repeat;
+}

@@ -1,5 +1,13 @@
 (function ($) {
     "use strict";
+    //$("#contact-msg").removeAttr("hidden").html("Mail send Successfully");
+    // $("#contact-form").on("submit", function(e){
+    //     $("#page").append('<div class="loading"></div>');
+    //     $("#contact-msg").slideDown('fast',function(){
+    //         $("#contact-msg").html("Mail send Successfully").fadeOut( 4000 );;
+    //     });
+    //     e.preventDefault();
+    // });
 
     function portfolio_init() {
         var portfolio_grid = $('#portfolio_grid'),
@@ -21,33 +29,31 @@
             });
         }
     }
-    $(function () {
+   $(function () {
         $('#contact-form').validator();
         $('#contact-form').on('submit', function (e) {
-            if (!e.isDefaultPrevented()) {
-                var url = "sendMail.php";
-                //window.location.href = 'sendMail.php';
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function (data) {
-                        var messageAlert = 'alert-' + data.type;
-                        var messageText = data.message;
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                        if (messageAlert && messageText) {
-                            $('#contact-form').find('.messages').html(alertBox);
-                            $('#contact-form')[0].reset();
-                        }
-                    },
-                    error: function(){
-                        return "Hello";
-                    }
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '../sendMail.php',
+                data: $(this).serialize(),
+                beforeSend: function(){
+                    $("#contact-form").append('<div class="loading"></div>');
+                },
+                setTimeout: 2000,
+                error: function(){
+                    $(".loading").remove();
+                },
+                success: function(){
+                    $("#contact-msg").slideDown('fast',function(){
+                        $(".loading").remove();
+                        $("#contact-msg").html("Mail send Successfully").fadeOut( 4000 );
 
-                });
-                
-               
-            } 
+                    });
+                }
+            });
+
+            
             
         });
     });
