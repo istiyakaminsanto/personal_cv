@@ -19,13 +19,12 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = "moslemuddin6991@gmail.com";
-    $mail->Password = "moslem420";
-    $mail->SetFrom = ('test@gmail.com');
+    $mail->Password = "moslem1234";
+    $mail->setFrom($email, $name);
     $mail->addAddress('istiyakaminsanto@gmail.com', 'Istiyak Amin');
     $mail->isHTML(true);                                  
     $mail->Subject = 'Got one new messege from your website';
     $mail->Body    = '<b>name: </b>' . $name . '<br>' . '<b>Email: </b>' . $email . '<br>' . '<b>Message: </b>' . $message;
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
