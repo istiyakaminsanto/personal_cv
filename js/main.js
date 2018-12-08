@@ -35,6 +35,7 @@
                 setTimeout: 2000,
                 error: function(){
                     $(".loading").remove();
+                    $("#contact-msg").html("Something went to wrong").fadeOut( 4000 );
                 },
                 success: function(){
                     $("#contact-msg").slideDown('fast',function(){
