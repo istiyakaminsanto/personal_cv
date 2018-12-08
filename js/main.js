@@ -1,13 +1,5 @@
 (function ($) {
     "use strict";
-    //$("#contact-msg").removeAttr("hidden").html("Mail send Successfully");
-    // $("#contact-form").on("submit", function(e){
-    //     $("#page").append('<div class="loading"></div>');
-    //     $("#contact-msg").slideDown('fast',function(){
-    //         $("#contact-msg").html("Mail send Successfully").fadeOut( 4000 );;
-    //     });
-    //     e.preventDefault();
-    // });
 
     function portfolio_init() {
         var portfolio_grid = $('#portfolio_grid'),
