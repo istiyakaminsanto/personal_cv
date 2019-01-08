@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/main-red.css?v=1.0" type="text/css">
 
+
     <link rel="stylesheet" href="preview/lmpixels-demo-panel.css" type="text/css">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
 </head>
@@ -773,8 +776,17 @@
                                                 <i class="form-control-icon pe-7s-comment"></i>
                                                 <div class="help-block with-errors"></div>
                                             </div>
+                                            <div class="g-recaptcha" data-sitekey="6Le954cUAAAAALOtIfbb6RPaT4zirT4pkZe6cvfZ"></div>
                                             <p id="contact-msg"></p>
-                                            
+
+
+                                            <script type="text/javascript">
+                                                var onloadCallback = function() {
+                                                  alert("grecaptcha is ready!");
+                                                };
+                                              </script>
+
+
                                             <input type="submit" class="button btn-send" value="Send message">
                                             
                                         </div>
